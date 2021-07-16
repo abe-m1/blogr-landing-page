@@ -27,7 +27,8 @@ body {
 }
 
 .top-container {
-  background-color: $lightRed;
+  background-image: linear-gradient($veryLightRed, $lightRed);
+  border-bottom-left-radius: 80px;
 }
 
 .header {
@@ -46,7 +47,7 @@ body {
   }
 
   &__logo {
-    width: 13rem;
+    width: 9rem;
 
     @include respond(tab-port) {
       margin-right: 4rem;
@@ -182,6 +183,7 @@ body {
 // Navigation for mobile
 .mobile-nav {
   font-size: 3rem;
+  color: white;
   @include respond(tab-port) {
     display: none;
   }
@@ -207,7 +209,98 @@ body {
 .hero {
   width: 80%;
   margin: auto;
+  margin-top: 5rem;
+  text-align: center;
+  color: white;
+
+  &__button-container {
+    padding-bottom: 5rem;
+  }
 }
+
+.hero p {
+  margin-bottom: 6rem;
+}
+
+.button {
+  padding: 1rem;
+  border: none;
+  border-radius: 25px;
+
+  &__regular {
+    background-color: white;
+    color: $lightRed;
+  }
+
+  &__transparent {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+  }
+}
+
+.second {
+  width: 80%;
+  margin: auto;
+  margin-top: 5rem;
+  text-align: center;
+  margin-bottom: 15rem;
+
+  &__button-container {
+    padding-bottom: 5rem;
+  }
+}
+
+.third-outer {
+  background-color: $veryDarkBlue;
+  position: relative;
+  height: 500px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.third {
+  width: 80%;
+  margin-top: -11rem;
+  left: 10%;
+  text-align: center;
+  position: absolute;
+  color: white;
+}
+
+.fourth {
+  width: 80%;
+  margin-top: 5rem;
+  left: 10%;
+  text-align: center;
+  margin: auto;
+}
+
+.footer-outer {
+  background-color: $veryDarkGrayBlue;
+  position: relative;
+  height: 500px;
+  border-top-right-radius: 50px;
+}
+footer {
+  width: 80%;
+  padding-top: 5rem;
+  left: 10%;
+  text-align: center;
+  margin: auto;
+  color: white;
+}
+
+.footer-logo {
+  margin: auto;
+}
+
+.footer-nav {
+  &__links {
+    list-style: none;
+  }
+}
+
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
