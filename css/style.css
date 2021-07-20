@@ -108,11 +108,14 @@ body {
   font-size: 1.6rem; }
 
 .top-container {
-  background-image: linear-gradient(#ff8f70, #ff3d54);
+  background-image: linear-gradient(to bottom, rgba(255, 82, 93, 0.9), rgba(255, 122, 133, 0.9)), url("/images/bg-pattern-intro.svg");
+  background-size: 400% 300%;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-bottom-left-radius: 80px; }
 
 .header {
-  padding: 3rem 0;
+  padding: 4rem 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -121,7 +124,7 @@ body {
   margin: auto; }
   @media (min-width: 900px) {
     .header {
-      width: 100%;
+      width: 80%;
       margin: auto;
       padding: 6rem 0 12rem; } }
   .header__logo {
@@ -182,7 +185,8 @@ body {
         align-items: center;
         background: none;
         position: unset;
-        height: unset; } }
+        height: unset;
+        width: 40%; } }
   .header__nav-links {
     display: flex;
     flex-flow: column nowrap;
@@ -195,7 +199,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    padding: 1.2rem;
+    padding: 3rem 1.2rem !important;
     border-radius: 5px; }
     @media (min-width: 900px) {
       .header__nav-links {
@@ -214,7 +218,8 @@ body {
     color: black;
     font-weight: 700;
     text-decoration: none;
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    margin-bottom: 1.5rem; }
     .header__nav-item:hover {
       color: grey; }
     @media (min-width: 900px) {
@@ -223,11 +228,19 @@ body {
         transition: all 0.3s;
         padding: 0; } }
 
-.mobile-nav {
+#mobile-nav {
   font-size: 3rem;
   color: white; }
   @media (min-width: 900px) {
-    .mobile-nav {
+    #mobile-nav {
+      display: none; } }
+
+#mobile-extra {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 900px) {
+    #mobile-extra {
       display: none; } }
 
 .nav-container {
@@ -250,13 +263,17 @@ body {
   text-align: center;
   color: white; }
   .hero__button-container {
-    padding-bottom: 5rem; }
+    padding-bottom: 10rem; }
 
 .hero p {
   margin-bottom: 6rem; }
 
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem; }
+
 .button {
-  padding: 1rem;
+  padding: 1rem 2.5rem;
   border: none;
   border-radius: 25px; }
   .button__regular {
@@ -265,6 +282,15 @@ body {
   .button__transparent {
     border: 1px solid white;
     background-color: transparent;
+    color: white; }
+  .button__plain {
+    background-color: transparent;
+    color: white; }
+  .button__mobile-plain {
+    color: black;
+    background-color: transparent; }
+  .button__mobile-transition {
+    background-color: #ff3d54;
     color: white; }
 
 .second {
@@ -276,8 +302,21 @@ body {
   .second__button-container {
     padding-bottom: 5rem; }
 
+.second h2 {
+  font-size: 2.6rem;
+  margin-bottom: 4rem; }
+
+.second__image-container {
+  margin-bottom: 5rem; }
+
+.second__text-container div {
+  margin-bottom: 5rem; }
+
 .third-outer {
-  background-color: #1f3f5b;
+  background-image: linear-gradient(to bottom, rgba(44, 45, 63, 0.9), rgba(63, 65, 100, 0.9)), url("/images/bg-pattern-circles.svg");
+  background-size: 400% 300%;
+  background-position: center center;
+  background-repeat: no-repeat;
   position: relative;
   height: 500px;
   border-top-right-radius: 50px;
@@ -301,7 +340,7 @@ body {
 .footer-outer {
   background-color: #2c2d3f;
   position: relative;
-  height: 500px;
+  height: 675px;
   border-top-right-radius: 50px; }
 
 footer {
@@ -313,10 +352,52 @@ footer {
   color: white; }
 
 .footer-logo {
-  margin: auto; }
+  margin: auto;
+  margin-bottom: 8rem; }
 
 .footer-nav__links {
   list-style: none; }
+
+.footer-nav a {
+  color: #c8c8cb;
+  margin-bottom: 1rem;
+  text-decoration: none; }
+
+.footer-nav p {
+  margin-bottom: 2rem;
+  margin-top: 3rem; }
+
+.hide {
+  display: none; }
+
+.nav-block {
+  color: black;
+  margin-right: 2rem;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 2rem; }
+  @media (min-width: 900px) {
+    .nav-block {
+      color: white; } }
+
+.nav-products, .nav-connect, .nav-company {
+  position: relative;
+  background-color: #c8c8cb;
+  list-style: none;
+  padding: 1rem !important;
+  border-radius: 4px; }
+  @media (min-width: 900px) {
+    .nav-products, .nav-connect, .nav-company {
+      position: absolute;
+      background-color: white; } }
+
+.fa-chevron-down {
+  color: #ff3d54; }
+  @media (min-width: 900px) {
+    .fa-chevron-down {
+      color: white; } }
 
 .attribution {
   font-size: 11px;

@@ -27,12 +27,17 @@ body {
 }
 
 .top-container {
-  background-image: linear-gradient($veryLightRed, $lightRed);
+  background-image:
+    linear-gradient(to bottom, hsla(356, 100%, 66%, 0.9), hsla(355, 100%, 74%, 0.9)),
+    url('/images/bg-pattern-intro.svg');
+  background-size: 400% 300%;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-bottom-left-radius: 80px;
 }
 
 .header {
-  padding: 3rem 0;
+  padding: 4rem 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -41,7 +46,7 @@ body {
   margin: auto;
 
   @include respond(tab-port) {
-    width: 100%;
+    width: 80%;
     margin: auto;
     padding: 6rem 0 12rem;
   }
@@ -129,6 +134,7 @@ body {
       background: none;
       position: unset;
       height: unset;
+      width: 40%;
     }
   }
 
@@ -144,7 +150,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    padding: 1.2rem;
+    padding: 3rem 1.2rem !important;
     border-radius: 5px;
 
     @include respond(tab-port) {
@@ -167,6 +173,7 @@ body {
     font-weight: 700;
     text-decoration: none;
     text-transform: capitalize;
+    margin-bottom: 1.5rem;
 
     &:hover {
       color: grey;
@@ -181,9 +188,19 @@ body {
 }
 
 // Navigation for mobile
-.mobile-nav {
+#mobile-nav {
   font-size: 3rem;
   color: white;
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+#mobile-extra {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
   @include respond(tab-port) {
     display: none;
   }
@@ -214,7 +231,7 @@ body {
   color: white;
 
   &__button-container {
-    padding-bottom: 5rem;
+    padding-bottom: 10rem;
   }
 }
 
@@ -222,8 +239,13 @@ body {
   margin-bottom: 6rem;
 }
 
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
 .button {
-  padding: 1rem;
+  padding: 1rem 2.5rem;
   border: none;
   border-radius: 25px;
 
@@ -236,6 +258,21 @@ body {
     border: 1px solid white;
     background-color: transparent;
     color: white;
+  }
+
+  &__plain {
+    background-color: transparent;
+    color: white;
+  }
+
+  &__mobile-plain {
+    color: black;
+    background-color: transparent;
+  }
+
+  &__mobile-transition {
+    background-color: $lightRed;
+    color: $white;
   }
 }
 
@@ -251,8 +288,27 @@ body {
   }
 }
 
+.second h2 {
+  font-size: 2.6rem;
+  margin-bottom: 4rem;
+}
+
+.second__image-container {
+  margin-bottom: 5rem;
+}
+
+.second__text-container div {
+  margin-bottom: 5rem;
+}
+
 .third-outer {
-  background-color: $veryDarkBlue;
+  
+  background-image:
+    linear-gradient(to bottom, hsla(237, 17%, 21%, 0.9), hsla(237, 23%, 32%, 0.9)),
+    url('/images/bg-pattern-circles.svg');
+  background-size: 400% 300%;
+  background-position: center center;
+  background-repeat: no-repeat;
   position: relative;
   height: 500px;
   border-top-right-radius: 50px;
@@ -279,7 +335,7 @@ body {
 .footer-outer {
   background-color: $veryDarkGrayBlue;
   position: relative;
-  height: 500px;
+  height: 675px;
   border-top-right-radius: 50px;
 }
 footer {
@@ -293,6 +349,7 @@ footer {
 
 .footer-logo {
   margin: auto;
+  margin-bottom: 8rem;
 }
 
 .footer-nav {
@@ -300,6 +357,57 @@ footer {
     list-style: none;
   }
 }
+
+.footer-nav a {
+  color: $grayishBlue;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.footer-nav p {
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.hide {
+  display: none;
+}
+
+.nav-block {
+  color: black;
+  margin-right: 2rem;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 2rem;
+
+  @include respond(tab-port) {
+    color: white;
+  }
+}
+
+.nav-products, .nav-connect, .nav-company {
+  position: relative;
+  background-color: $grayishBlue;
+  list-style: none;
+  padding: 1rem !important;
+  border-radius: 4px;
+
+  @include respond(tab-port) {
+    position: absolute;
+    background-color: white;
+  }
+}
+
+.fa-chevron-down {
+  color: $lightRed;
+
+  @include respond(tab-port) {
+    color: $white;
+  }
+}
+
 
 
 .attribution { font-size: 11px; text-align: center; }

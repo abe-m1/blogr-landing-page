@@ -19,32 +19,48 @@
       <img class="header__logo" src="images/logo.svg" alt="" />
       <div class="header__nav-container">
         <ul class="header__nav-links">
-          <li class="header__nav-header">Product</li>
-          <ul class="header__nav-contents">
-            <li class="header__nav-item">Overview</li>
-            <li class="header__nav-item">Pricing</li>
-            <li class="header__nav-item">Marketplace</li>
-            <li class="header__nav-item">Features</li>
-            <li class="header__nav-item">Integrations</li>
-          </ul>
-          <li class="header__nav-header">Company</li>
-          <ul class="header__nav-contents">
-            <li class="header__nav-item">About</li>
-            <li class="header__nav-item">Team</li>
-            <li class="header__nav-item">Blog</li>
-            <li class="header__nav-item">Careers</li>
-          </ul>
-          <li class="header__nav-header">Connect</li>
-          <ul class="header__nav-contents">
-            <li class="header__nav-item">Contact</li>
-            <li class="header__nav-item">Newsletter</li>
-            <li class="header__nav-item">LinkedIn</li>
-          </ul>
+          <div class="nav-block">
+            <li id="product-header" class="header__nav-header">Product <i id="product" class="fas fa-chevron-down"></i></li>
+            <ul class="header__nav-contents nav-products hide">
+              <li class="header__nav-item">Overview</li>
+              <li class="header__nav-item">Pricing</li>
+              <li class="header__nav-item">Marketplace</li>
+              <li class="header__nav-item">Features</li>
+              <li class="header__nav-item">Integrations</li>
+            </ul>
+          </div>
+          
+          <div class="nav-block">
+            <li id="company-header" class="header__nav-header">Company <i id="company" class="fas fa-chevron-down"></i></li>
+            <ul class="header__nav-contents nav-company hide">
+              <li class="header__nav-item">About</li>
+              <li class="header__nav-item">Team</li>
+              <li class="header__nav-item">Blog</li>
+              <li class="header__nav-item">Careers</li>
+            </ul>
+          </div>
+         
+          <div class="nav-block">
+            <li id="connect-header" class="header__nav-header">Connect <i id="connect" class="fas fa-chevron-down"></i></li>
+            <ul class="header__nav-contents nav-connect hide">
+              <li class="header__nav-item">Contact</li>
+              <li class="header__nav-item">Newsletter</li>
+              <li class="header__nav-item">LinkedIn</li>
+            </ul>
+          </div>
+
+          <div id="mobile-extra" class="hide">
+            <div>
+              <hr>
+            </div>
+            <button class="button button__mobile-plain">Login</button>
+            <button class="button button__mobile-transition">Sign Up</button>
+          </div>
         </ul>
       </div>
       <ul class="header__button-container">
-        <button class="button__regular">Login</button>
-        <button class="button__transparent">Sign Up</button>
+        <button class="button button__plain">Login</button>
+        <button class="button button__regular">Sign Up</button>
       </ul>
       <i class="fas fa-bars mobile-nav" id="mobile-nav"></i>
     </header>
