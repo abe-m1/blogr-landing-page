@@ -19,12 +19,16 @@ html {
   @include respond(big-desktop) {
     font-size: 75%; //1rem = 12px
   }
+
+  overflow-x: hidden;
 }
 
 body {
   font-family: 'Ubuntu', Helvetica, sans-serif;
   font-size: 1.6rem;
+  overflow-x: hidden;
 }
+
 
 .top-container {
   background-image:
@@ -48,7 +52,7 @@ body {
   @include respond(tab-port) {
     width: 80%;
     margin: auto;
-    padding: 6rem 0 12rem;
+    padding: 6rem 0 7rem;
   }
 
   &__logo {
@@ -232,6 +236,10 @@ body {
 
   &__button-container {
     padding-bottom: 10rem;
+
+    @include respond(tab-port) {
+      padding-bottom: 17rem;
+    }
   }
 }
 
@@ -244,6 +252,7 @@ body {
   margin-bottom: 2rem;
 
   @include respond(tab-port) {
+    margin-bottom: 1rem;
     font-size: 6rem;
   }
 }
@@ -288,21 +297,24 @@ body {
   margin-bottom: 15rem;
 
   @include respond(tab-port) {
-    margin-top: 12rem;
+    margin-bottom: 7rem;
+    margin-top: 15rem;
   }
 
   &__button-container {
     padding-bottom: 5rem;
   }
-}
 
-.second h2 {
-  font-size: 2.6rem;
-  margin-bottom: 4rem;
-
-  @include respond(tab-port) {
-    font-size: 3.6rem;
-  }  
+  &__header {
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
+    font-weight: 500;
+  
+    @include respond(tab-port) {
+      font-size: 3.8rem;
+      margin-bottom: 12rem;
+    }  
+  }
 }
 
 .second-desktop-container {
@@ -316,19 +328,45 @@ body {
 
   @include respond(tab-port) {
     flex: 1;
-    order: 1
+    order: 1;
   } 
+}
+
+.second__image {
+  width: 100%;
+  @include respond(tab-port) {
+    margin-left: 8rem;
+    width: 150% !important;
+    margin-top: -24rem;
+  }
 }
 
 .second__text-container {
   @include respond(tab-port) {
     flex: 1;
     order: 0;
+    text-align: left;
   } 
 
   div {
     margin-bottom: 5rem;
+
+    h2 {
+      @include respond(tab-port) {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    p {
+      @include respond(tab-port) {
+        line-height: 1.6;
+        font-size: 2rem;
+      }
+    }
   }
+
+  
 }
 
 .third-desktop-container {
@@ -353,8 +391,24 @@ body {
     flex-direction: column;
     text-align: left;
   } 
-}
 
+  h2 {
+    @include respond(tab-port) {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  p {
+    @include respond(tab-port) {
+      line-height: 1.6;
+      font-size: 2rem;
+    }
+  }
+}
+.third__image {
+  width: 100%;
+}
 .third-outer {
   
   background-image:
@@ -367,6 +421,11 @@ body {
   height: 500px;
   border-top-right-radius: 50px;
   border-bottom-left-radius: 50px;
+
+  @include respond(tab-port) {
+    height: 400px;
+    margin-bottom: 25rem;
+  }
 }
 
 .third {
@@ -394,7 +453,30 @@ body {
 .fourth__text-container {
   @include respond(tab-port) {
     flex: 1;
+    text-align: left;
   } 
+  h2 {
+    @include respond(tab-port) {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  p {
+    @include respond(tab-port) {
+      line-height: 1.6;
+      font-size: 2rem;
+    }
+  }
+}
+
+.fourth__image {
+  width: 100%;
+  @include respond(tab-port) {
+    width: 150% !important;
+    margin-top: -11rem;
+    margin-left: -36rem;
+  }
 }
 
 .fourth {
@@ -412,7 +494,7 @@ body {
   border-top-right-radius: 50px;
 
   @include respond(tab-port) {
-    height: 375px;
+    height: 275px;
   }
 }
 footer {

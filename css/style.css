@@ -46,7 +46,6 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
   display: block; }
 
 /* Natural flow and rhythm in articles by default */
@@ -89,7 +88,8 @@ img:not([alt]) {
   white-space: nowrap !important; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  overflow-x: hidden; }
   @media (min-width: 600px) {
     html {
       font-size: 50%; } }
@@ -105,7 +105,8 @@ html {
 
 body {
   font-family: 'Ubuntu', Helvetica, sans-serif;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  overflow-x: hidden; }
 
 .top-container {
   background-image: linear-gradient(to bottom, rgba(255, 82, 93, 0.9), rgba(255, 122, 133, 0.9)), url("/images/bg-pattern-intro.svg");
@@ -126,7 +127,7 @@ body {
     .header {
       width: 80%;
       margin: auto;
-      padding: 6rem 0 12rem; } }
+      padding: 6rem 0 7rem; } }
   .header__logo {
     width: 9rem; }
     @media (min-width: 900px) {
@@ -264,6 +265,9 @@ body {
   color: white; }
   .hero__button-container {
     padding-bottom: 10rem; }
+    @media (min-width: 900px) {
+      .hero__button-container {
+        padding-bottom: 17rem; } }
 
 .hero p {
   margin-bottom: 6rem; }
@@ -273,6 +277,7 @@ body {
   margin-bottom: 2rem; }
   @media (min-width: 900px) {
     .hero h2 {
+      margin-bottom: 1rem;
       font-size: 6rem; } }
 
 .button {
@@ -304,16 +309,18 @@ body {
   margin-bottom: 15rem; }
   @media (min-width: 900px) {
     .second {
-      margin-top: 12rem; } }
+      margin-bottom: 7rem;
+      margin-top: 15rem; } }
   .second__button-container {
     padding-bottom: 5rem; }
-
-.second h2 {
-  font-size: 2.6rem;
-  margin-bottom: 4rem; }
-  @media (min-width: 900px) {
-    .second h2 {
-      font-size: 3.6rem; } }
+  .second__header {
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
+    font-weight: 500; }
+    @media (min-width: 900px) {
+      .second__header {
+        font-size: 3.8rem;
+        margin-bottom: 12rem; } }
 
 @media (min-width: 900px) {
   .second-desktop-container {
@@ -326,13 +333,30 @@ body {
       flex: 1;
       order: 1; } }
 
+.second__image {
+  width: 100%; }
+  @media (min-width: 900px) {
+    .second__image {
+      margin-left: 8rem;
+      width: 150% !important;
+      margin-top: -24rem; } }
+
 @media (min-width: 900px) {
   .second__text-container {
     flex: 1;
-    order: 0; } }
+    order: 0;
+    text-align: left; } }
 
 .second__text-container div {
   margin-bottom: 5rem; }
+  @media (min-width: 900px) {
+    .second__text-container div h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem; } }
+  @media (min-width: 900px) {
+    .second__text-container div p {
+      line-height: 1.6;
+      font-size: 2rem; } }
 
 @media (min-width: 900px) {
   .third-desktop-container {
@@ -351,6 +375,19 @@ body {
     flex-direction: column;
     text-align: left; } }
 
+@media (min-width: 900px) {
+  .third__text-container h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem; } }
+
+@media (min-width: 900px) {
+  .third__text-container p {
+    line-height: 1.6;
+    font-size: 2rem; } }
+
+.third__image {
+  width: 100%; }
+
 .third-outer {
   background-image: linear-gradient(to bottom, rgba(44, 45, 63, 0.9), rgba(63, 65, 100, 0.9)), url("/images/bg-pattern-circles.svg");
   background-size: 400% 300%;
@@ -360,6 +397,10 @@ body {
   height: 500px;
   border-top-right-radius: 50px;
   border-bottom-left-radius: 50px; }
+  @media (min-width: 900px) {
+    .third-outer {
+      height: 400px;
+      margin-bottom: 25rem; } }
 
 .third {
   width: 80%;
@@ -379,7 +420,26 @@ body {
 
 @media (min-width: 900px) {
   .fourth__text-container {
-    flex: 1; } }
+    flex: 1;
+    text-align: left; } }
+
+@media (min-width: 900px) {
+  .fourth__text-container h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem; } }
+
+@media (min-width: 900px) {
+  .fourth__text-container p {
+    line-height: 1.6;
+    font-size: 2rem; } }
+
+.fourth__image {
+  width: 100%; }
+  @media (min-width: 900px) {
+    .fourth__image {
+      width: 150% !important;
+      margin-top: -11rem;
+      margin-left: -36rem; } }
 
 .fourth {
   width: 80%;
@@ -395,7 +455,7 @@ body {
   border-top-right-radius: 50px; }
   @media (min-width: 900px) {
     .footer-outer {
-      height: 375px; } }
+      height: 275px; } }
 
 footer {
   width: 80%;

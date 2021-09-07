@@ -81,10 +81,16 @@
   </div>
 
   <section class="second">
-    <h2>Designed for the future</h2>
+    <h2 class="second__header">Designed for the future</h2>
     <div class="second-desktop-container">
       <div class="second__image-container">
-        <img class="second__image" src="images/illustration-editor-mobile.svg" alt="" />
+        <picture>
+          <source 
+            srcset="images/illustration-editor-mobile.svg"
+            media="(max-width: 900px)"
+          />
+          <img class="second__image" src="images/illustration-editor-desktop.svg" alt="" />
+        </picture>
       </div>
       <div class="second__text-container">
         <div>
@@ -124,9 +130,15 @@
   </div>
 
   <section class="fourth">
-    <div class="third-desktop-container">
+    <div class="fourth-desktop-container">
       <div class="fourth__image-container">
-        <img class="fourth__image" src="images/illustration-laptop-mobile.svg" alt="" />
+        <picture>
+          <source 
+            srcset="images/illustration-laptop-mobile.svg"
+            media="(max-width: 900px)"
+          />
+          <img class="fourth__image" src="images/illustration-laptop-desktop.svg" alt="" />
+        </picture>
       </div>
       <div class="fourth__text-container">
         <div>
