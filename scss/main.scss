@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600;&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700;&display=swap');
 @import 'reset';
 @import 'variables';
 
@@ -24,21 +22,36 @@ html {
 }
 
 body {
-  font-family: 'Ubuntu', Helvetica, sans-serif;
+  // font-family: 'Overpass', Helvetica, sans-serif;
+  font-family: 'Overpass', sans-serif;
+	// font-family: 'Ubuntu', sans-serif;
   font-size: 1.6rem;
   overflow-x: hidden;
 }
 
+.container {
+  position: absolute;
+  width: 100%;
+}
 
 .top-container {
-  background-image:
-    linear-gradient(to bottom, hsla(356, 100%, 66%, 0.9), hsla(355, 100%, 74%, 0.9)),
-    url('/images/bg-pattern-intro.svg');
-  background-size: 400% 300%;
-  background-position: center center;
-  background-repeat: no-repeat;
+  // background-image:
+  //   linear-gradient(to bottom, hsla(356, 100%, 66%, 0.9), hsla(355, 100%, 74%, 0.9)),
+  //   url('/images/bg-pattern-intro.svg');
+  // background-size: 400% 300%;
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  padding-top: 20rem;
+  background: hsl(353, 100%, 62%);
   border-bottom-left-radius: 80px;
-}
+  background: url(../images/bg-pattern-intro.svg) top -14em right -35em / 80em no-repeat,
+		linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+
+    @include respond(tab-port) {
+      background: url(../images/bg-pattern-intro.svg) top -80em right -80em / 190em no-repeat,
+			linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    }
+  }
 
 .header {
   padding: 4rem 0;
@@ -116,7 +129,7 @@ body {
       }
     }
   }
-  &__nav-container {
+  &__link-container {
     display: none;
     background: linear-gradient(
       to bottom,
@@ -173,22 +186,35 @@ body {
 
   &__nav-item {
     padding: 0.8rem 0;
-    color: black;
-    font-weight: 700;
     text-decoration: none;
     text-transform: capitalize;
     margin-bottom: 1.5rem;
+    color: grey;
 
     &:hover {
-      color: grey;
+      color: black;
+      font-weight: 700;
     }
 
     @include respond(tab-port) {
-      margin-right: 2.5rem;
+      margin-top: 2rem;
+      margin-left: 2.5rem;
       transition: all 0.3s;
       padding: 0;
+      text-align: left;
     }
   }
+
+  &__nav-header {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    width: 80%;
+  }
+
+  &__nav-header:hover {
+      border-bottom: 1px solid #fff;
+      width: 80%;
+    }
 }
 
 // Navigation for mobile
@@ -210,7 +236,7 @@ body {
   }
 }
 
-.nav-container {
+.link-container {
   display: none;
 }
 
@@ -245,9 +271,11 @@ body {
 
 .hero p {
   margin-bottom: 6rem;
+  font-size: 2rem;
 }
 
 .hero h2 {
+  font-family: 'Overpass', sans-serif;
   font-size: 3rem;
   margin-bottom: 2rem;
 
@@ -261,16 +289,29 @@ body {
   padding: 1rem 2.5rem;
   border: none;
   border-radius: 25px;
+  font-size: 2rem;
+  font-weight: 600;
 
   &__regular {
     background-color: white;
     color: $lightRed;
+
+    &:hover {
+      background-color: $whiteHover;
+      color: $white;
+    }
   }
+
 
   &__transparent {
     border: 1px solid white;
     background-color: transparent;
     color: white;
+
+    &:hover {
+      background-color: white;
+      color: $lightRed;
+    }
   }
 
   &__plain {
@@ -297,8 +338,8 @@ body {
   margin-bottom: 15rem;
 
   @include respond(tab-port) {
-    margin-bottom: 7rem;
-    margin-top: 15rem;
+    margin-bottom: 5rem;
+    margin-top: 16rem;
   }
 
   &__button-container {
@@ -308,10 +349,10 @@ body {
   &__header {
     font-size: 2.8rem;
     margin-bottom: 4rem;
-    font-weight: 500;
+    font-weight: 700;
   
     @include respond(tab-port) {
-      font-size: 3.8rem;
+      font-size: 4.2rem;
       margin-bottom: 12rem;
     }  
   }
@@ -337,7 +378,7 @@ body {
   @include respond(tab-port) {
     margin-left: 8rem;
     width: 150% !important;
-    margin-top: -24rem;
+    margin-top: -23rem;
   }
 }
 
@@ -359,8 +400,10 @@ body {
     }
 
     p {
+      color: $veryDarkGrayishBlue;
+
       @include respond(tab-port) {
-        line-height: 1.6;
+        line-height: 1.7;
         font-size: 2rem;
       }
     }
@@ -411,12 +454,14 @@ body {
 }
 .third-outer {
   
-  background-image:
-    linear-gradient(to bottom, hsla(237, 17%, 21%, 0.9), hsla(237, 23%, 32%, 0.9)),
-    url('/images/bg-pattern-circles.svg');
-  background-size: 400% 300%;
-  background-position: center center;
-  background-repeat: no-repeat;
+  // background-image:
+  //   linear-gradient(to bottom, hsla(237, 17%, 21%, 0.9), hsla(237, 23%, 32%, 0.9)),
+  //   url('/images/bg-pattern-circles.svg');
+  // background-size: 400% 300%;
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  background: url(../images/bg-pattern-circles.svg) center -15em / 35em no-repeat,
+		linear-gradient(133deg, hsl(237, 17%, 21%) 20%, hsl(237, 23%, 32%) 100%);
   position: relative;
   height: 500px;
   border-top-right-radius: 50px;
@@ -425,6 +470,8 @@ body {
   @include respond(tab-port) {
     height: 400px;
     margin-bottom: 25rem;
+    background: url(../images/bg-pattern-circles.svg) -10em -25em / 50em no-repeat,
+			linear-gradient(133deg, hsl(237, 17%, 21%) 20%, hsl(237, 23%, 32%) 100%);
   }
 }
 
@@ -450,22 +497,29 @@ body {
   } 
 }
 
-.fourth__text-container {
+.text-container {
   @include respond(tab-port) {
     flex: 1;
     text-align: left;
   } 
-  h2 {
-    @include respond(tab-port) {
-      font-size: 4rem;
-      margin-bottom: 2rem;
-    }
-  }
+  
+  div {
+    margin-bottom: 5rem;
 
-  p {
-    @include respond(tab-port) {
-      line-height: 1.6;
-      font-size: 2rem;
+    h2 {
+      @include respond(tab-port) {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    p {
+      color: $veryDarkGrayishBlue;
+
+      @include respond(tab-port) {
+        line-height: 1.7;
+        font-size: 2rem;
+      }
     }
   }
 }
@@ -473,9 +527,9 @@ body {
 .fourth__image {
   width: 100%;
   @include respond(tab-port) {
-    width: 150% !important;
-    margin-top: -11rem;
-    margin-left: -36rem;
+    width: 175% !important;
+    margin-top: -21rem;
+    margin-left: -46rem;
   }
 }
 
@@ -485,6 +539,11 @@ body {
   left: 10%;
   text-align: center;
   margin: auto;
+
+  @include respond(tab-port) {
+    padding-bottom: 19rem;
+    margin: auto;
+  }
 }
 
 .footer-outer {
@@ -494,7 +553,8 @@ body {
   border-top-right-radius: 50px;
 
   @include respond(tab-port) {
-    height: 275px;
+    height: 360px;
+    padding-top: 3rem;
   }
 }
 footer {
@@ -520,8 +580,17 @@ footer {
     flex: 1;
   } 
 
-  &__links {
+  &__link {
     list-style: none;
+    @include respond(tab-port) {
+      margin-bottom: 2rem;
+    } 
+    
+    a {
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+    }
   }
 }
 
@@ -529,11 +598,25 @@ footer {
   color: $grayishBlue;
   margin-bottom: 1rem;
   text-decoration: none;
+
 }
 
 .footer-nav p {
   margin-bottom: 2rem;
   margin-top: 3rem;
+
+  @include respond(tab-port) {
+    margin-top: 0rem;
+    font-weight: 700;
+  } 
+}
+
+.nav-block:hover .hide {
+  display: block;
+}
+
+.nav-block:hover .fa-chevron-down {
+  transform: rotate(180deg);
 }
 
 .hide {
@@ -566,6 +649,8 @@ footer {
   @include respond(tab-port) {
     position: absolute;
     background-color: white;
+    margin-top: 2rem;
+    width: 20rem;
   }
 }
 
@@ -575,6 +660,10 @@ footer {
   @include respond(tab-port) {
     color: $white;
   }
+}
+
+.extra-margin-right {
+  margin-right: 2rem;
 }
 
 

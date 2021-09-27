@@ -1,6 +1,6 @@
 
 const body = document.querySelector('body');
-const mobileNav = document.querySelector('.header__nav-container');
+const mobileNav = document.querySelector('.header__link-container');
 const hamburgerToggle = document.getElementById('mobile-nav');
 
 const productDropdown = document.getElementById('product-header');
@@ -27,20 +27,20 @@ hamburgerToggle.addEventListener('click', () => {
   }
 });
 
-productDropdown.addEventListener('click', () => {
-  productChevron.classList.toggle('fa-chevron-down')
-  productChevron.classList.toggle('fa-chevron-up')
-  productMenu.classList.toggle("hide");
-});
+// productDropdown.addEventListener('click', () => {
+//   productChevron.classList.toggle('fa-chevron-down')
+//   productChevron.classList.toggle('fa-chevron-up')
+//   productMenu.classList.toggle("hide");
+// });
 
-connectDropdown.addEventListener('click', () => {
-  connectChevron.classList.toggle('fa-chevron-down')
-  connectChevron.classList.toggle('fa-chevron-up')
-  connectMenu.classList.toggle("hide");
-});
+// connectDropdown.addEventListener('click', () => {
+//   connectChevron.classList.toggle('fa-chevron-down')
+//   connectChevron.classList.toggle('fa-chevron-up')
+//   connectMenu.classList.toggle("hide");
+// });
 
-companyDropdown.addEventListener('click', () => {
-  companyChevron.classList.toggle('fa-chevron-down')
-  companyChevron.classList.toggle('fa-chevron-up')
-  companyMenu.classList.toggle("hide");
-});
+// companyDropdown.addEventListener('click', () => {
+//   companyChevron.classList.toggle('fa-chevron-down')
+//   companyChevron.classList.toggle('fa-chevron-up')
+//   companyMenu.classList.toggle("hide");
+// });
