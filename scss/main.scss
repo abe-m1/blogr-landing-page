@@ -29,18 +29,12 @@ body {
   overflow-x: hidden;
 }
 
-.container {
+.nav-container {
   position: absolute;
   width: 100%;
 }
 
 .top-container {
-  // background-image:
-  //   linear-gradient(to bottom, hsla(356, 100%, 66%, 0.9), hsla(355, 100%, 74%, 0.9)),
-  //   url('/images/bg-pattern-intro.svg');
-  // background-size: 400% 300%;
-  // background-position: center center;
-  // background-repeat: no-repeat;
   padding-top: 20rem;
   background: hsl(353, 100%, 62%);
   border-bottom-left-radius: 80px;
@@ -208,12 +202,17 @@ body {
   &__nav-header {
     font-size: 2rem;
     margin-bottom: 2rem;
-    width: 80%;
+    width: 100%;
+    @include respond(tab-port) {
+      width: 80%; 
+    }
   }
 
-  &__nav-header:hover {
+  &__nav-header:hover  {
       border-bottom: 1px solid #fff;
-      width: 80%;
+      @include respond(tab-port) {
+        width: 80%; 
+      }
     }
 }
 
@@ -276,7 +275,7 @@ body {
 
 .hero h2 {
   font-family: 'Overpass', sans-serif;
-  font-size: 3rem;
+  font-size: 2.9rem;
   margin-bottom: 2rem;
 
   @include respond(tab-port) {
@@ -286,11 +285,16 @@ body {
 }
 
 .button {
-  padding: 1rem 2.5rem;
+  padding: 1rem 2rem;
   border: none;
   border-radius: 25px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
+
+  @include respond(tab-port) {
+    padding: 1rem 2.5rem;
+    font-size: 2rem;
+  }
 
   &__regular {
     background-color: white;
@@ -325,12 +329,15 @@ body {
   }
 
   &__mobile-transition {
-    background-color: $lightRed;
+    width: 50%;
+    margin: auto;
+    // background-color: $lightRed;
+    background-image: linear-gradient(to right, $veryLightRed , $lightRed);
     color: $white;
   }
 }
 
-.second {
+.design {
   width: 80%;
   margin: auto;
   margin-top: 5rem;
@@ -358,13 +365,13 @@ body {
   }
 }
 
-.second-desktop-container {
+.design-desktop-container {
   @include respond(tab-port) {
     display: flex;
   } 
 }
 
-.second__image-container {
+.design__image-container {
   margin-bottom: 5rem;
 
   @include respond(tab-port) {
@@ -373,7 +380,7 @@ body {
   } 
 }
 
-.second__image {
+.design__image {
   width: 100%;
   @include respond(tab-port) {
     margin-left: 8rem;
@@ -382,7 +389,7 @@ body {
   }
 }
 
-.second__text-container {
+.design__text-container {
   @include respond(tab-port) {
     flex: 1;
     order: 0;
@@ -412,20 +419,20 @@ body {
   
 }
 
-.third-desktop-container {
+.infrastructure-desktop-container {
   @include respond(tab-port) {
     display: flex;
   } 
 }
 
-.third__image-container {
+.infrastructure__image-container {
 
   @include respond(tab-port) {
     flex: 1;
   } 
 }
 
-.third__text-container {
+.infrastructure__text-container {
   @include respond(tab-port) {
     flex: 1;
     display: flex;
@@ -449,17 +456,10 @@ body {
     }
   }
 }
-.third__image {
+.infrastructure__image {
   width: 100%;
 }
-.third-outer {
-  
-  // background-image:
-  //   linear-gradient(to bottom, hsla(237, 17%, 21%, 0.9), hsla(237, 23%, 32%, 0.9)),
-  //   url('/images/bg-pattern-circles.svg');
-  // background-size: 400% 300%;
-  // background-position: center center;
-  // background-repeat: no-repeat;
+.infrastructure-outer {
   background: url(../images/bg-pattern-circles.svg) center -15em / 35em no-repeat,
 		linear-gradient(133deg, hsl(237, 17%, 21%) 20%, hsl(237, 23%, 32%) 100%);
   position: relative;
@@ -475,7 +475,7 @@ body {
   }
 }
 
-.third {
+.infrastructure {
   width: 80%;
   margin-top: -11rem;
   left: 10%;
@@ -604,10 +604,10 @@ footer {
 .footer-nav p {
   margin-bottom: 2rem;
   margin-top: 3rem;
+  font-weight: 700;
 
   @include respond(tab-port) {
     margin-top: 0rem;
-    font-weight: 700;
   } 
 }
 
@@ -635,6 +635,7 @@ footer {
   @include respond(tab-port) {
     color: white;
     margin-bottom: 0;
+    margin-top: 0;
 
   }
 }
@@ -663,10 +664,14 @@ footer {
 }
 
 .extra-margin-right {
-  margin-right: 2rem;
+  @include respond(tab-port) {
+    margin-right: 2rem;
+  }
 }
 
-
+hr {
+  border-top: 1px solid #ececec;
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
